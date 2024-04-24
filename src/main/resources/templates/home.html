@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>For All</title>
+</head>
+<body>
+This Page for ALL!!!
+<li sec:authorize="!isAuthenticated()" class="nav-item"><a href="/login">Login</a></li>
+<li sec:authorize="isAuthenticated()" class="nav-item">
+    <form class="link" th:action="@{/logout}" method="post">
+        <input class="link" type="submit" value="Logout"/>
+    </form>
+</li>
+</body>
+</html>
